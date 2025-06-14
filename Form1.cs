@@ -7,17 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pharmacy_Management_System.PharmacyDatabaseDataSetTableAdapters;
 
 namespace Pharmacy_Management_System
 {
     public partial class Form1 : Form
     {
+        DataClasses1DataContext db = new DataClasses1DataContext();
+
         public Form1()
         {
             InitializeComponent();
         }
-
         private void guna2ContainerControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pharmacyDatabaseDataSet.customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.pharmacyDatabaseDataSet.customer);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            customer newCustomer = new customer
+            {
+                cname = txtCName.Text,
+                phoneNo = txtCPhone.Text,
+                address = txtCAddress.Text
+            };
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
