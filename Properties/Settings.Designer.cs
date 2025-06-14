@@ -12,7 +12,11 @@ namespace Pharmacy_Management_System.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.13.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
+>>>>>>> origin
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,13 +30,19 @@ namespace Pharmacy_Management_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DIMUTHULK\\SQLEXPRESS;Initial Catalog=PharmacyDatabase;Integrated Secu" +
             "rity=True;Encrypt=True;TrustServerCertificate=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-SM86SRG\\SQLEXPRESS;Initial Catalog=PharmacyDatabase;Integrate" +
+            "d Security=True;TrustServerCertificate=True")]
+>>>>>>> origin
         public string PharmacyDatabaseConnectionString {
             get {
                 return ((string)(this["PharmacyDatabaseConnectionString"]));
             }
         }
+<<<<<<< HEAD
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -44,5 +54,7 @@ namespace Pharmacy_Management_System.Properties {
                 return ((string)(this["PharmacyDatabaseConnectionString1"]));
             }
         }
+=======
+>>>>>>> origin
     }
 }
