@@ -33,6 +33,9 @@ namespace Pharmacy_Management_System
     partial void Insertcategory(category instance);
     partial void Updatecategory(category instance);
     partial void Deletecategory(category instance);
+    partial void Insertsupplier(supplier instance);
+    partial void Updatesupplier(supplier instance);
+    partial void Deletesupplier(supplier instance);
     partial void Insertcustomer(customer instance);
     partial void Updatecustomer(customer instance);
     partial void Deletecustomer(customer instance);
@@ -48,13 +51,10 @@ namespace Pharmacy_Management_System
     partial void Insertsale(sale instance);
     partial void Updatesale(sale instance);
     partial void Deletesale(sale instance);
-    partial void Insertsupplier(supplier instance);
-    partial void Updatesupplier(supplier instance);
-    partial void Deletesupplier(supplier instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::Pharmacy_Management_System.Properties.Settings.Default.PharmacyDatabaseConnectionString, mappingSource)
+				base(global::Pharmacy_Management_System.Properties.Settings.Default.PharmacyDatabaseConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -88,6 +88,14 @@ namespace Pharmacy_Management_System
 			get
 			{
 				return this.GetTable<category>();
+			}
+		}
+		
+		public System.Data.Linq.Table<supplier> suppliers
+		{
+			get
+			{
+				return this.GetTable<supplier>();
 			}
 		}
 		
@@ -128,14 +136,6 @@ namespace Pharmacy_Management_System
 			get
 			{
 				return this.GetTable<sale>();
-			}
-		}
-		
-		public System.Data.Linq.Table<supplier> suppliers
-		{
-			get
-			{
-				return this.GetTable<supplier>();
 			}
 		}
 	}
@@ -223,6 +223,168 @@ namespace Pharmacy_Management_System
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.supplier")]
+	public partial class supplier : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _spId;
+		
+		private string _spName;
+		
+		private string _spAddress;
+		
+		private string _spPhone;
+		
+		private EntitySet<purchase> _purchases;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnspIdChanging(int value);
+    partial void OnspIdChanged();
+    partial void OnspNameChanging(string value);
+    partial void OnspNameChanged();
+    partial void OnspAddressChanging(string value);
+    partial void OnspAddressChanged();
+    partial void OnspPhoneChanging(string value);
+    partial void OnspPhoneChanged();
+    #endregion
+		
+		public supplier()
+		{
+			this._purchases = new EntitySet<purchase>(new Action<purchase>(this.attach_purchases), new Action<purchase>(this.detach_purchases));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int spId
+		{
+			get
+			{
+				return this._spId;
+			}
+			set
+			{
+				if ((this._spId != value))
+				{
+					this.OnspIdChanging(value);
+					this.SendPropertyChanging();
+					this._spId = value;
+					this.SendPropertyChanged("spId");
+					this.OnspIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spName", DbType="NVarChar(30)")]
+		public string spName
+		{
+			get
+			{
+				return this._spName;
+			}
+			set
+			{
+				if ((this._spName != value))
+				{
+					this.OnspNameChanging(value);
+					this.SendPropertyChanging();
+					this._spName = value;
+					this.SendPropertyChanged("spName");
+					this.OnspNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spAddress", DbType="NVarChar(40)")]
+		public string spAddress
+		{
+			get
+			{
+				return this._spAddress;
+			}
+			set
+			{
+				if ((this._spAddress != value))
+				{
+					this.OnspAddressChanging(value);
+					this.SendPropertyChanging();
+					this._spAddress = value;
+					this.SendPropertyChanged("spAddress");
+					this.OnspAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spPhone", DbType="NVarChar(15)")]
+		public string spPhone
+		{
+			get
+			{
+				return this._spPhone;
+			}
+			set
+			{
+				if ((this._spPhone != value))
+				{
+					this.OnspPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._spPhone = value;
+					this.SendPropertyChanged("spPhone");
+					this.OnspPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_purchase", Storage="_purchases", ThisKey="spId", OtherKey="supplierId")]
+		public EntitySet<purchase> purchases
+		{
+			get
+			{
+				return this._purchases;
+			}
+			set
+			{
+				this._purchases.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_purchases(purchase entity)
+		{
+			this.SendPropertyChanging();
+			entity.supplier = this;
+		}
+		
+		private void detach_purchases(purchase entity)
+		{
+			this.SendPropertyChanging();
+			entity.supplier = null;
 		}
 	}
 	
@@ -1405,168 +1567,6 @@ namespace Pharmacy_Management_System
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.supplier")]
-	public partial class supplier : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _spId;
-		
-		private string _spName;
-		
-		private string _spAddress;
-		
-		private string _spPhone;
-		
-		private EntitySet<purchase> _purchases;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnspIdChanging(int value);
-    partial void OnspIdChanged();
-    partial void OnspNameChanging(string value);
-    partial void OnspNameChanged();
-    partial void OnspAddressChanging(string value);
-    partial void OnspAddressChanged();
-    partial void OnspPhoneChanging(string value);
-    partial void OnspPhoneChanged();
-    #endregion
-		
-		public supplier()
-		{
-			this._purchases = new EntitySet<purchase>(new Action<purchase>(this.attach_purchases), new Action<purchase>(this.detach_purchases));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int spId
-		{
-			get
-			{
-				return this._spId;
-			}
-			set
-			{
-				if ((this._spId != value))
-				{
-					this.OnspIdChanging(value);
-					this.SendPropertyChanging();
-					this._spId = value;
-					this.SendPropertyChanged("spId");
-					this.OnspIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spName", DbType="NVarChar(30)")]
-		public string spName
-		{
-			get
-			{
-				return this._spName;
-			}
-			set
-			{
-				if ((this._spName != value))
-				{
-					this.OnspNameChanging(value);
-					this.SendPropertyChanging();
-					this._spName = value;
-					this.SendPropertyChanged("spName");
-					this.OnspNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spAddress", DbType="NVarChar(40)")]
-		public string spAddress
-		{
-			get
-			{
-				return this._spAddress;
-			}
-			set
-			{
-				if ((this._spAddress != value))
-				{
-					this.OnspAddressChanging(value);
-					this.SendPropertyChanging();
-					this._spAddress = value;
-					this.SendPropertyChanged("spAddress");
-					this.OnspAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_spPhone", DbType="NVarChar(15)")]
-		public string spPhone
-		{
-			get
-			{
-				return this._spPhone;
-			}
-			set
-			{
-				if ((this._spPhone != value))
-				{
-					this.OnspPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._spPhone = value;
-					this.SendPropertyChanged("spPhone");
-					this.OnspPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_purchase", Storage="_purchases", ThisKey="spId", OtherKey="supplierId")]
-		public EntitySet<purchase> purchases
-		{
-			get
-			{
-				return this._purchases;
-			}
-			set
-			{
-				this._purchases.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_purchases(purchase entity)
-		{
-			this.SendPropertyChanging();
-			entity.supplier = this;
-		}
-		
-		private void detach_purchases(purchase entity)
-		{
-			this.SendPropertyChanging();
-			entity.supplier = null;
 		}
 	}
 }

@@ -57,8 +57,11 @@ namespace Pharmacy_Management_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pharmacyDatabaseDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.pharmacyDatabaseDataSet.Product);
+            // TODO: This line of code loads data into the 'pharmacyDatabaseDataSet3.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter2.Fill(this.pharmacyDatabaseDataSet3.Product);
+            // TODO: This line of code loads data into the 'pharmacyDatabaseDataSet2.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter1.Fill(this.pharmacyDatabaseDataSet2.Product);
+            
 
         }
 

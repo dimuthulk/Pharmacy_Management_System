@@ -81,6 +81,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.productTableAdapter = new Pharmacy_Management_System.PharmacyDatabaseDataSetTableAdapters.ProductTableAdapter();
+            this.pharmacyDatabaseDataSet2 = new Pharmacy_Management_System.PharmacyDatabaseDataSet2();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter1 = new Pharmacy_Management_System.PharmacyDatabaseDataSet2TableAdapters.ProductTableAdapter();
+            this.pharmacyDatabaseDataSet3 = new Pharmacy_Management_System.PharmacyDatabaseDataSet3();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter2 = new Pharmacy_Management_System.PharmacyDatabaseDataSet3TableAdapters.ProductTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
@@ -89,6 +95,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDatabaseDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDatabaseDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDatabaseDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -246,7 +256,7 @@
             this.batchNoDataGridViewTextBoxColumn,
             this.packSizeDataGridViewTextBoxColumn,
             this.locationDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productBindingSource;
+            this.dataGridView1.DataSource = this.productBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(3, 284);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -581,7 +591,35 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // Form1
+            // pharmacyDatabaseDataSet2
+            // 
+            this.pharmacyDatabaseDataSet2.DataSetName = "PharmacyDatabaseDataSet2";
+            this.pharmacyDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.pharmacyDatabaseDataSet2;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pharmacyDatabaseDataSet3
+            // 
+            this.pharmacyDatabaseDataSet3.DataSetName = "PharmacyDatabaseDataSet3";
+            this.pharmacyDatabaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataMember = "Product";
+            this.productBindingSource2.DataSource = this.pharmacyDatabaseDataSet3;
+            // 
+            // productTableAdapter2
+            // 
+            this.productTableAdapter2.ClearBeforeFill = true;
+            // 
+            // damintha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -590,7 +628,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "damintha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -605,6 +643,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDatabaseDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDatabaseDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDatabaseDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,6 +705,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn batchNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn packSizeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
+        private PharmacyDatabaseDataSet2 pharmacyDatabaseDataSet2;
+        private System.Windows.Forms.BindingSource productBindingSource1;
+        private PharmacyDatabaseDataSet2TableAdapters.ProductTableAdapter productTableAdapter1;
+        private PharmacyDatabaseDataSet3 pharmacyDatabaseDataSet3;
+        private System.Windows.Forms.BindingSource productBindingSource2;
+        private PharmacyDatabaseDataSet3TableAdapters.ProductTableAdapter productTableAdapter2;
     }
 }
 

@@ -56,21 +56,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataClasses1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </Compile>
     <Compile Include="damintha.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="damintha.Designer.cs">
       <DependentUpon>damintha.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pathum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pathum.Designer.cs">
+      <DependentUpon>pathum.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacyDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PharmacyDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacyDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmacyDatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacyDatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmacyDatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacyDatabaseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmacyDatabaseDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +120,17 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="PharmacyDatabaseDataSet.xsc">
       <DependentUpon>PharmacyDatabaseDataSet.xsd</DependentUpon>
@@ -105,6 +142,39 @@
     </None>
     <None Include="PharmacyDatabaseDataSet.xss">
       <DependentUpon>PharmacyDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDatabaseDataSet1.xsc">
+      <DependentUpon>PharmacyDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PharmacyDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PharmacyDatabaseDataSet1.xss">
+      <DependentUpon>PharmacyDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDatabaseDataSet2.xsc">
+      <DependentUpon>PharmacyDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PharmacyDatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PharmacyDatabaseDataSet2.xss">
+      <DependentUpon>PharmacyDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDatabaseDataSet3.xsc">
+      <DependentUpon>PharmacyDatabaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDatabaseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PharmacyDatabaseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PharmacyDatabaseDataSet3.xss">
+      <DependentUpon>PharmacyDatabaseDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

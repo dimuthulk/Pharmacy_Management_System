@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+.PharmacyDatabaseDataSet.xsd
+.PharmacyDatabaseDataSet1.xsd
+.PharmacyDatabaseDataSet2.xsd
+.PharmacyDatabaseDataSet3.xsd
+.DataSet1.xsd
