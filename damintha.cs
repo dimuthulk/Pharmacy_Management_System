@@ -11,10 +11,10 @@ using System.Windows.Forms;
 namespace Pharmacy_Management_System
 {
     
-    public partial class Form1 : Form
+    public partial class damintha : Form
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
-        public Form1()
+        public damintha()
         {
             InitializeComponent();
         }
@@ -35,12 +35,16 @@ namespace Pharmacy_Management_System
             Product product = new Product();
             product.pname = txtProductName.Text;
             product.packSize = txtPackSize.Text;
-            product.location = txtLocation.Text;
+            product.location = txtCompany.Text;
             product.generic = txtGeneric.Text;
             product.expiryDate = ExpiryDate.Value;
             product.sale_rate = Convert.ToInt32(txtSaleRate.Text);
             product.purchase_rate = Convert.ToInt32(txtPurchaseRate.Text);
+            product.quantity = Convert.ToInt32(txtQuantity.Text);
+            product.batchNo= txtBatchNo.Text;
+            product.company = txtCompany.Text;
             product.ptype = cmbType.Text;
+
             db.Products.InsertOnSubmit(product);
             db.SubmitChanges();
             MessageBox.Show("Data Successfully Inserted");
@@ -59,6 +63,11 @@ namespace Pharmacy_Management_System
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPurchaseRate_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
