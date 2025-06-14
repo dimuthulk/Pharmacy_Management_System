@@ -11,11 +11,12 @@ using Pharmacy_Management_System.PharmacyDatabaseDataSetTableAdapters;
 
 namespace Pharmacy_Management_System
 {
-    public partial class Form1 : Form
+    
+    public partial class Dimuthu : Form
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
 
-        public Form1()
+        public Dimuthu()
         {
             InitializeComponent();
         }
@@ -26,8 +27,14 @@ namespace Pharmacy_Management_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pharmacyDatabaseDataSet.customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter.Fill(this.pharmacyDatabaseDataSet.customer);
+        }
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
@@ -36,7 +43,12 @@ namespace Pharmacy_Management_System
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
         {
             customer newCustomer = new customer
             {
@@ -44,12 +56,6 @@ namespace Pharmacy_Management_System
                 phoneNo = txtCPhone.Text,
                 address = txtCAddress.Text
             };
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
